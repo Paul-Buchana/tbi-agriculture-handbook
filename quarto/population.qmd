@@ -1,6 +1,6 @@
 ## Population {.unnumbered}
 
-The figure below shows the population of Rwanda at district level. Nyagatare, Gasabo and Gatsibo districts have the highest population. Nyabihu district has the lowest population and this is follwed by Rulindo and Gakenke districts.
+The figure below shows the population of Rwanda at district level. Nyagatare, Gasabo and Gatsibo districts have the highest population. Nyabihu district has the lowest population and this is followed by Rulindo and Gakenke districts.
 
 ```{r label = rwanda-sector-population, fig.cap="Rwanda Population Data at district Level"}
 
