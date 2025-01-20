@@ -1,0 +1,45 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "TBI Agriculture Handbook"
+  author: "Paul Buchana"
+  output-file: html_book
+  date: "November 2024"
+  page-footer:
+    center: "© 2024 All rights reserved. TBI Agriculture Handbook Project. Powered by Analytica MO."
+  chapters:
+    - index.qmd
+    - part: NISR
+      chapters:
+        - nisr.qmd
+        - population.qmd
+        - agricultural_households.qmd
+    - studies.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    font: Aeonik
+    execute:
+      echo: false
+      warning: false
+      error: false
+      include: true
+    
+  pdf:
+    documentclass: scrreprt
+    execute:
+      echo: false
+      warning: false
+      error: false
+      include: true
+    numbered: false  # Disable numbering for headings in PDF output
+
+editor: visual

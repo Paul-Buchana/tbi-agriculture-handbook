@@ -1,0 +1,19 @@
+# NISR Data {.unnumbered}
+
+In August 2022, the National Institute of Statistics of Rwanda (NISR) conducted the Fifth Rwanda Population and Housing Census (RPHC-5). This comprehensive census aimed to gather updated demographic, social, and economic data to inform policy formulation, decision making and support national development initiatives.
+
+Key findings from the RPHC-5 include:
+
+-   **Population Growth**: Rwanda's population reached **`13,246,394`**, reflecting an annual growth rate of **`2.3%`** between 2012 and 2022.
+
+-   **Life Expectancy**: Projections indicate that life expectancy at birth in Rwanda is **`69.9`** years as of 2024.
+
+The census results are detailed in various thematic reports, such as:
+
+-   **Population Projection**: This report provides insights into future demographic trends based on the 2022 census data.
+
+-   **Educational Characteristics**: This report examines the educational status of the population, highlighting literacy rates and educational attainment levels.
+
+These findings offer valuable insights into Rwanda's demographic and socio-economic landscape, serving as a foundation for evidence-based policy decisions and strategic planning.
+
+With regard to agriculture, key information can be obtained from the following surveys: seasonal agriculture survey; the comprehensive food and security vulnerability analysis survey and generally, population data.

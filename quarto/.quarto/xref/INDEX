@@ -1,0 +1,29 @@
+{
+  "index.qmd": {
+    "index.html": "01e9dde4"
+  },
+  "intro.qmd": {
+    "intro.html": "0a4d445e"
+  },
+  "summary.qmd": {
+    "summary.html": "f1cb3152"
+  },
+  "references.qmd": {
+    "references.html": "e9499b57"
+  },
+  "nisr.qmd": {
+    "nisr.html": "e4f7a8b9"
+  },
+  "population.qmd": {
+    "population.html": "55cdfae6"
+  },
+  "agricultural_households.qmd": {
+    "agricultural_households.html": "93e7ae57"
+  },
+  "geospatial_analysis.qmd": {
+    "geospatial_analysis.html": "feb70afc"
+  },
+  "studies.qmd": {
+    "studies.html": "80d22eab"
+  }
+}

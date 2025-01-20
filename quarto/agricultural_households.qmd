@@ -1,0 +1,153 @@
+---
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+## Agricultural Households {.unnumbered}
+
+The map and table below show the number of agricultural households in Rwanda. Gatsibo district has the highest number of agricultural households (`106,895`). This is followed by Nyagatare (`106,284`) and Gicumbi (`96,339`) districts. In addition, Nyagatare has the highest number of male headed households while Gatsibo has the highest number of female headed households. Nyarugenge (`20,073`), Kicukiro (`23,925`) and Nyabihu (`56,156`) districts have the least number of agricultural households.
+
+```{r}
+library(readxl)
+library(janitor)
+library(leaflet)
+library(dplyr)
+library(stringr)
+library(sf)
+library(knitr)
+library(kableExtra)
+
+# Loading the agricultural households data
+agricultural_households <- read_excel("../data/PHC5-2022_Main_Indicators.xlsx", sheet = "Table 79", skip = 3, col_names = TRUE)
+
+# Renaming the columns
+colnames(agricultural_households) <- c(
+  "location",
+  "total_households",
+  "urban_households",
+  "rural_households",
+  "total_agricultural_households",
+  "urban_agricultural_households",
+  "rural_agricultural_households",
+  "pct_agricultural_households",
+  "pct_urban_agricultural_households",
+  "pct_rural_agricultural_households"
+)
+
+# Loading the agricultural households data disaggregated by sex
+agricultural_households_by_gender <- read_excel("../data/PHC5-2022_Main_Indicators.xlsx", sheet = "Table 80", skip = 3, col_names = TRUE)
+
+# Renaming the columns in agricultural data by gender
+colnames(agricultural_households_by_gender) <- c(
+  "location",
+  "total_households",
+  "male_headed_households",
+  "female_headed_households",
+  "total_agricultural_households",
+  "male_headed_agriculture_households",
+  "female_headed_agriculture_households",
+  "pct_agricultural_households",
+  "pct_male_headed_agricultural_households",
+  "pct_female_headed_agricultural_households"
+)
+
+# Selecting only unique columns from the second dataset to avoid intersection
+agricultural_households_by_gender_filtered <- agricultural_households_by_gender %>%
+  select(location, male_headed_households, female_headed_households,
+         male_headed_agriculture_households, female_headed_agriculture_households,
+         pct_male_headed_agricultural_households, pct_female_headed_agricultural_households)
+
+# Removing beginning and trailing white space from the location variable
+agricultural_households <- agricultural_households %>%
+  mutate(location = str_trim(location) %>% str_to_lower())
+agricultural_households_by_gender_filtered <- agricultural_households_by_gender_filtered %>%
+  mutate(location = str_trim(location) %>% str_to_lower())
+
+# Merging the two datasets
+merged_agricultural_households <- left_join(agricultural_households, agricultural_households_by_gender_filtered, by = "location")
+
+# Removing rows that correspond to country name and provinces
+merged_agricultural_households <- merged_agricultural_households %>%
+  filter(!location %in% c("rwanda", "city of kigali", "southern province", "western province", "northern province", "eastern province"))
+
+# Loading Rwanda districts shape file
+rwanda_districts <- st_read("../data/rwa_adm_2006_nisr_wgs1984_20181002_shp/rwa_adm2_2006_NISR_WGS1984_20181002.shp", quiet = TRUE) %>%
+  clean_names()
+
+# Standardizing location names in both datasets
+rwanda_districts <- rwanda_districts %>%
+  mutate(adm2_en = str_trim(adm2_en) %>% str_to_lower())
+
+merged_agricultural_households <- merged_agricultural_households %>%
+  mutate(location = str_trim(location) %>% str_to_lower())
+
+# Joining the data with the spatial data
+rwanda_map_data <- rwanda_districts %>%
+  left_join(merged_agricultural_households, by = c("adm2_en" = "location"))
+
+# Define icon HTMLs
+house_icon <- '<img src="https://img.icons8.com/emoji/20/000000/house-emoji.png" style="vertical-align: middle; width: 15px; height: 15px;">'
+banana_icon <- '<img src="https://cdn-icons-png.flaticon.com/512/2909/2909808.png" style="vertical-align: middle; width: 15px; height: 15px;">'
+male_icon <- '<img src="https://img.icons8.com/ios-filled/50/000000/male.png" style="vertical-align: middle; width: 15px; height: 15px;">'
+female_icon <- '<img src="https://img.icons8.com/ios-filled/50/000000/female.png" style="vertical-align: middle; width: 15px; height: 15px;">'
+percent_icon <- '<img src="https://img.icons8.com/ios-filled/15/000000/percentage.png" style="vertical-align: middle; width: 15px; height: 15px;">'
+
+# Create an interactive map
+leaflet(data = rwanda_map_data) %>%
+  addTiles() %>%
+  addPolygons(
+    fillColor = ~colorNumeric(
+      palette = c("yellow", "darkgreen"),
+      domain = range(rwanda_map_data$total_agricultural_households, na.rm = TRUE)
+    )(total_agricultural_households),
+    weight = 1,
+    opacity = 1,
+    color = "white",
+    fillOpacity = 0.7,
+    popup = ~paste(
+      "<strong>District:</strong>", str_to_sentence(adm2_en), "<br>",
+      house_icon, "<strong>Total Households:</strong>", formatC(total_households, format = "f", big.mark = ",", digits = 0), "<br>",
+      banana_icon, "<strong>Agricultural Households:</strong>", formatC(total_agricultural_households, format = "f", big.mark = ",", digits = 0), "<br>",
+      male_icon, "<strong>Male Headed Agricultural Households:</strong>", formatC(male_headed_agriculture_households, format = "f", big.mark = ",", digits = 0), "<br>",
+      female_icon, "<strong>Female Headed Agricultural Households:</strong>", formatC(female_headed_agriculture_households, format = "f", big.mark = ",", digits = 0), "<br>",
+      percent_icon, "<strong>Percentage of Households:</strong>", pct_agricultural_households, "%"
+    )
+  ) %>%
+  addLegend(
+    pal = colorNumeric(
+      palette = c("yellow", "darkgreen"),
+      domain = range(rwanda_map_data$total_agricultural_households, na.rm = TRUE)
+    ),
+    values = ~total_agricultural_households,
+    title = "Agricultural Households",
+    position = "bottomright"
+  )
+
+# Sorting the data by total_agricultural_households in descending order
+sorted_agriculture_households <- merged_agricultural_households %>%
+  arrange(desc(total_agricultural_households))
+
+# Displaying the sorted table with location in sentence case and adding comma separators using big.mark
+sorted_agriculture_households %>%
+  select(location, total_households, total_agricultural_households, male_headed_agriculture_households, female_headed_agriculture_households) %>%
+  mutate(
+    location = str_to_sentence(location),  # Convert location to sentence case
+    total_households = formatC(total_households, format = "f", big.mark = ",", digits = 0),  # Add comma separators
+    total_agricultural_households = formatC(total_agricultural_households, format = "f", big.mark = ",", digits = 0),  # Add comma separators
+    male_headed_agriculture_households = formatC(male_headed_agriculture_households, format = "f", big.mark = ",", digits = 0),  # Add comma separators
+    female_headed_agriculture_households = formatC(female_headed_agriculture_households, format = "f", big.mark = ",", digits = 0)  # Add comma separators
+  ) %>%
+  kable(
+    format = "html", 
+    caption = "Sorted Agricultural Households by District",
+    col.names = c("District", "Households", "Agricultural Households", "Male Headed Agricultural Households", "Female Headed Agricultural Households"),
+    digits = c(0, 0, 0, 0, 0),
+    align = "lcccc"
+  ) %>%
+  kable_styling(
+    "striped", 
+    full_width = F, 
+    position = "left"
+  )
+```

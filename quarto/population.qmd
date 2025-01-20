@@ -1,0 +1,81 @@
+## Population {.unnumbered}
+
+The figure below shows the population of Rwanda at district level. Nyagatare, Gasabo and Gatsibo districts have the highest population. Nyabihu district has the lowest population and this is follwed by Rulindo and Gakenke districts.
+
+```{r label = rwanda-sector-population, fig.cap="Rwanda Population Data at district Level"}
+
+# Loading required libraries
+library(readxl)
+library(janitor)
+library(sf)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(ggiraph)
+
+# Loading and cleaning population data
+district_popln <- read_excel("../data/rwa_admpop_2023.xlsx", sheet = "rwa_admpop_adm2_2023") %>%
+  clean_names() %>%
+  rename(district = adm2_fr)
+
+# Loading Rwanda district shapefiles and cleaning column names
+rwanda_districts <- st_read("../data/rwa_adm_2006_nisr_wgs1984_20181002_shp/rwa_adm2_2006_NISR_WGS1984_20181002.shp", quiet = TRUE) %>%
+  clean_names()
+
+# Merging population data with district shapefile
+rwanda_map_data <- rwanda_districts %>%
+  left_join(district_popln, by = c("adm2_en" = "district"))
+
+# Calculating centroids for district names
+district_centroids <- st_centroid(rwanda_map_data)
+district_centroids_coords <- cbind(st_coordinates(district_centroids), district_centroids)
+
+# Creating ggplot object with ggiraph interactivity
+map_plot <- ggplot(data = rwanda_map_data) +
+  # District polygons with interactive tooltips
+  geom_sf_interactive(
+    aes(fill = t_tl, tooltip = paste(adm2_en, "<br>Population:", scales::comma(t_tl))),  # Tooltip showing district name and population
+    color = "white", size = 0.2
+  ) +
+  
+  # District names positioned at centroids
+  geom_text(
+    data = district_centroids_coords,
+    aes(x = X, y = Y, label = adm2_en),
+    size = 3, color = "black"
+  ) +
+  
+  # Legend for the population with gradient scale
+  scale_fill_gradient(low = "#F4D166", high = "#9E3A26", name = "Population", labels = label_comma()) +
+  
+  # Adding a caption
+  labs(
+    caption = "Source: NISR Rwanda, 2023"
+  ) +
+  
+  # Minimal theming
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.caption = element_text(size = 8, hjust = 1)
+  )
+
+# Render interactive map using ggiraph
+girafe(ggobj = map_plot, width_svg = 10, height_svg = 6)
+
+# sorted_district_population <- district_popln %>%
+#   select(district, t_tl) %>%
+#   arrange(desc(t_tl)) %>%
+#   as_tibble() %>%
+#   print(n=Inf)
+
+```
+
+
+::: callout-warning
+This applies for all visualizations: Make sure to install all necessary packages prior to loading requisite libraries and before rendering the code above. You can do this by going to tools \> install packages \> looking up the package that matches the library name from the list.
+:::
