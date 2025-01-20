@@ -35,7 +35,7 @@
     "href": "population.html",
     "title": "Population",
     "section": "",
-    "text": "The figure below shows the population of Rwanda at district level. Nyagatare, Gasabo and Gatsibo districts have the highest population. Nyabihu district has the lowest population and this is follwed by Rulindo and Gakenke districts.\n\n\n\n\nRwanda Population Data at district Level\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis applies for all visualizations: Make sure to install all necessary packages prior to loading requisite libraries and before rendering the code above. You can do this by going to tools &gt; install packages &gt; looking up the package that matches the library name from the list.",
+    "text": "The figure below shows the population of Rwanda at district level. Nyagatare, Gasabo and Gatsibo districts have the highest population. Nyabihu district has the lowest population and this is followed by Rulindo and Gakenke districts.\n\n\n\n\nRwanda Population Data at district Level\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis applies for all visualizations: Make sure to install all necessary packages prior to loading requisite libraries and before rendering the code above. You can do this by going to tools &gt; install packages &gt; looking up the package that matches the library name from the list.",
     "crumbs": [
       "NISR",
       "Population"
