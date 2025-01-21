@@ -20,14 +20,14 @@
     ]
   },
   {
-    "objectID": "agricultural_households.html",
-    "href": "agricultural_households.html",
-    "title": "Agricultural Households",
+    "objectID": "nisr.html",
+    "href": "nisr.html",
+    "title": "NISR Data",
     "section": "",
-    "text": "The map and table below show the number of agricultural households in Rwanda. Gatsibo district has the highest number of agricultural households (106,895). This is followed by Nyagatare (106,284) and Gicumbi (96,339) districts. In addition, Nyagatare has the highest number of male headed households while Gatsibo has the highest number of female headed households. Nyarugenge (20,073), Kicukiro (23,925) and Nyabihu (56,156) districts have the least number of agricultural households.\n\n\n\n\n\n\n\nSorted Agricultural Households by District\n\n\nDistrict\nHouseholds\nAgricultural Households\nMale Headed Agricultural Households\nFemale Headed Agricultural Households\n\n\n\n\nGatsibo\n136,208\n106,895\n78,051\n28,844\n\n\nNyagatare\n160,435\n106,284\n79,310\n26,974\n\n\nGicumbi\n109,373\n96,339\n72,036\n24,303\n\n\nBugesera\n137,777\n91,469\n65,864\n25,605\n\n\nGisagara\n101,145\n87,353\n57,938\n29,415\n\n\nGakenke\n93,609\n86,772\n63,654\n23,118\n\n\nKamonyi\n116,378\n86,514\n62,031\n24,483\n\n\nKayonza\n114,186\n85,078\n60,689\n24,389\n\n\nNgoma\n102,589\n85,032\n59,352\n25,680\n\n\nKirehe\n113,886\n84,424\n61,173\n23,251\n\n\nNgororero\n92,623\n82,102\n56,752\n25,350\n\n\nNyamasheke\n95,229\n81,009\n59,225\n21,784\n\n\nNyamagabe\n92,052\n79,974\n56,997\n22,977\n\n\nRwamagana\n121,051\n79,624\n56,113\n23,511\n\n\nMusanze\n119,387\n79,190\n58,454\n20,736\n\n\nBurera\n91,786\n78,077\n59,427\n18,650\n\n\nRusizi\n104,937\n78,039\n57,557\n20,482\n\n\nRulindo\n91,909\n77,125\n56,248\n20,877\n\n\nKarongi\n91,444\n76,076\n53,289\n22,787\n\n\nNyanza\n93,007\n75,365\n50,120\n25,245\n\n\nHuye\n96,037\n74,948\n48,819\n26,129\n\n\nRuhango\n94,508\n74,538\n51,066\n23,472\n\n\nMuhanga\n93,241\n74,147\n53,056\n21,091\n\n\nRutsiro\n86,802\n73,034\n53,479\n19,555\n\n\nNyaruguru\n73,805\n65,613\n46,103\n19,510\n\n\nGasabo\n249,420\n58,735\n45,464\n13,271\n\n\nRubavu\n124,080\n56,974\n42,297\n14,677\n\n\nNyabihu\n76,391\n56,126\n39,840\n16,286\n\n\nKicukiro\n135,463\n23,925\n19,266\n4,659\n\n\nNyarugenge\n103,985\n20,073\n15,403\n4,670",
+    "text": "In August 2022, the National Institute of Statistics of Rwanda (NISR) conducted the Fifth Rwanda Population and Housing Census (RPHC-5). This comprehensive census aimed to gather updated demographic, social, and economic data to inform policy formulation, decision making and support national development initiatives.\nKey findings from the RPHC-5 include:\n\nPopulation Growth: Rwanda’s population reached 13,246,394, reflecting an annual growth rate of 2.3% between 2012 and 2022.\nLife Expectancy: Projections indicate that life expectancy at birth in Rwanda is 69.9 years as of 2024.\n\nThe census results are detailed in various thematic reports, such as:\n\nPopulation Projection: This report provides insights into future demographic trends based on the 2022 census data.\nEducational Characteristics: This report examines the educational status of the population, highlighting literacy rates and educational attainment levels.\n\nThese findings offer valuable insights into Rwanda’s demographic and socio-economic landscape, serving as a foundation for evidence-based policy decisions and strategic planning.\nWith regard to agriculture, key information can be obtained from the following surveys: seasonal agriculture survey; the comprehensive food and security vulnerability analysis survey and generally, population data.",
     "crumbs": [
       "NISR",
-      "Agricultural Households"
+      "NISR Data"
     ]
   },
   {
@@ -42,6 +42,17 @@
     ]
   },
   {
+    "objectID": "agricultural_households.html",
+    "href": "agricultural_households.html",
+    "title": "Agricultural Households",
+    "section": "",
+    "text": "The map and table below show the number of agricultural households in Rwanda. Gatsibo district has the highest number of agricultural households (106,895). This is followed by Nyagatare (106,284) and Gicumbi (96,339) districts. In addition, Nyagatare has the highest number of male headed households while Gatsibo has the highest number of female headed households. Nyarugenge (20,073), Kicukiro (23,925) and Nyabihu (56,156) districts have the least number of agricultural households.\n\n\n\n\n\n\n\nSorted Agricultural Households by District\n\n\nDistrict\nHouseholds\nAgricultural Households\nMale Headed Agricultural Households\nFemale Headed Agricultural Households\n\n\n\n\nGatsibo\n136,208\n106,895\n78,051\n28,844\n\n\nNyagatare\n160,435\n106,284\n79,310\n26,974\n\n\nGicumbi\n109,373\n96,339\n72,036\n24,303\n\n\nBugesera\n137,777\n91,469\n65,864\n25,605\n\n\nGisagara\n101,145\n87,353\n57,938\n29,415\n\n\nGakenke\n93,609\n86,772\n63,654\n23,118\n\n\nKamonyi\n116,378\n86,514\n62,031\n24,483\n\n\nKayonza\n114,186\n85,078\n60,689\n24,389\n\n\nNgoma\n102,589\n85,032\n59,352\n25,680\n\n\nKirehe\n113,886\n84,424\n61,173\n23,251\n\n\nNgororero\n92,623\n82,102\n56,752\n25,350\n\n\nNyamasheke\n95,229\n81,009\n59,225\n21,784\n\n\nNyamagabe\n92,052\n79,974\n56,997\n22,977\n\n\nRwamagana\n121,051\n79,624\n56,113\n23,511\n\n\nMusanze\n119,387\n79,190\n58,454\n20,736\n\n\nBurera\n91,786\n78,077\n59,427\n18,650\n\n\nRusizi\n104,937\n78,039\n57,557\n20,482\n\n\nRulindo\n91,909\n77,125\n56,248\n20,877\n\n\nKarongi\n91,444\n76,076\n53,289\n22,787\n\n\nNyanza\n93,007\n75,365\n50,120\n25,245\n\n\nHuye\n96,037\n74,948\n48,819\n26,129\n\n\nRuhango\n94,508\n74,538\n51,066\n23,472\n\n\nMuhanga\n93,241\n74,147\n53,056\n21,091\n\n\nRutsiro\n86,802\n73,034\n53,479\n19,555\n\n\nNyaruguru\n73,805\n65,613\n46,103\n19,510\n\n\nGasabo\n249,420\n58,735\n45,464\n13,271\n\n\nRubavu\n124,080\n56,974\n42,297\n14,677\n\n\nNyabihu\n76,391\n56,126\n39,840\n16,286\n\n\nKicukiro\n135,463\n23,925\n19,266\n4,659\n\n\nNyarugenge\n103,985\n20,073\n15,403\n4,670",
+    "crumbs": [
+      "NISR",
+      "Agricultural Households"
+    ]
+  },
+  {
     "objectID": "studies.html",
     "href": "studies.html",
     "title": "Studies",
@@ -49,17 +60,6 @@
     "text": "Some useful geospatial, spatial-temporal and geostatistics studies in this area that can be applied to the Rwandan context include:\n\nPrevalence of stunting in Rwanda at sector-level and possible multi-sectoral interventions linking the Ministry of Health and the Ministry of Agriculture. Comparisons with crop yield, cost of living etc. Refer to this documentation: https://www.paulamoraga.com/book-geospatial/\nPrecision agriculture and geospatial techniques for sustainable disease control (Roberts et al. 2021).\nApplications of Geographic Information Systems and Geostatistics in Plant Disease Epidemiology and Management (Nelson et al. 1999).\nGeospatial analysis and modelling in the prevention and control of animal diseases. USA case study can be found here: https://www.izs.it/vet_italiana/2007/43_3/549_557.pdf\n\n\n\n\n\nNelson, Merritt R., Thomas V. Orum, Ramon Jaime-Garcia, and Athar Nadeem. 1999. “Applications of Geographic Information Systems and Geostatistics in Plant Disease Epidemiology and Management.” Plant Disease 83 (4): 308–19. https://doi.org/10.1094/pdis.1999.83.4.308.\n\n\nRoberts, Daniel P., Nicholas M. Short, James Sill, Dilip K. Lakshman, Xiaojia Hu, and Michael Buser. 2021. “Precision Agriculture and Geospatial Techniques for Sustainable Disease Control.” Indian Phytopathology 74 (2): 287–305. https://doi.org/10.1007/s42360-021-00334-2.",
     "crumbs": [
       "Studies"
-    ]
-  },
-  {
-    "objectID": "nisr.html",
-    "href": "nisr.html",
-    "title": "NISR Data",
-    "section": "",
-    "text": "In August 2022, the National Institute of Statistics of Rwanda (NISR) conducted the Fifth Rwanda Population and Housing Census (RPHC-5). This comprehensive census aimed to gather updated demographic, social, and economic data to inform policy formulation, decision making and support national development initiatives.\nKey findings from the RPHC-5 include:\n\nPopulation Growth: Rwanda’s population reached 13,246,394, reflecting an annual growth rate of 2.3% between 2012 and 2022.\nLife Expectancy: Projections indicate that life expectancy at birth in Rwanda is 69.9 years as of 2024.\n\nThe census results are detailed in various thematic reports, such as:\n\nPopulation Projection: This report provides insights into future demographic trends based on the 2022 census data.\nEducational Characteristics: This report examines the educational status of the population, highlighting literacy rates and educational attainment levels.\n\nThese findings offer valuable insights into Rwanda’s demographic and socio-economic landscape, serving as a foundation for evidence-based policy decisions and strategic planning.\nWith regard to agriculture, key information can be obtained from the following surveys: seasonal agriculture survey; the comprehensive food and security vulnerability analysis survey and generally, population data.",
-    "crumbs": [
-      "NISR",
-      "NISR Data"
     ]
   },
   {

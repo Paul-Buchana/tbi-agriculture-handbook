@@ -12,6 +12,7 @@ library(dplyr)
 library(ggplot2)
 library(scales)
 library(ggiraph)
+library(ggiraphExtra)
 
 # Loading and cleaning population data
 district_popln <- read_excel("../data/rwa_admpop_2023.xlsx", sheet = "rwa_admpop_adm2_2023") %>%
@@ -35,7 +36,7 @@ map_plot <- ggplot(data = rwanda_map_data) +
   # District polygons with interactive tooltips
   geom_sf_interactive(
     aes(fill = t_tl, tooltip = paste(adm2_en, "<br>Population:", scales::comma(t_tl))),  # Tooltip showing district name and population
-    color = "white", size = 0.2
+    color = "black", size = 0.2
   ) +
   
   # District names positioned at centroids
@@ -54,18 +55,25 @@ map_plot <- ggplot(data = rwanda_map_data) +
   ) +
   
   # Minimal theming
-  theme_minimal() +
+  theme_void() +
   theme(
     legend.position = "right",
-    axis.text = element_blank(),
-    axis.ticks = element_blank(),
-    axis.title = element_blank(),
-    panel.grid = element_blank(),
+    plot.margin = margin(0, 0, 0, 0), # Removing extra margins around the plot
     plot.caption = element_text(size = 8, hjust = 1)
   )
 
 # Render interactive map using ggiraph
-girafe(ggobj = map_plot, width_svg = 10, height_svg = 6)
+# girafe(ggobj = map_plot, width_svg = 10, height_svg = 6)
+girafe(
+  ggobj = map_plot,
+  width_svg = 10,
+  height_svg = 6,
+  options = list(
+    opts_toolbar(position = "topright"),  # Place toolbar at the top-right
+    opts_hover(css = "cursor: pointer; fill: #FF4500;"),  # Highlight on hover
+    opts_zoom(max = 5)
+  )
+)
 
 # sorted_district_population <- district_popln %>%
 #   select(district, t_tl) %>%

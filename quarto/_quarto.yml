@@ -33,14 +33,5 @@ format:
       warning: false
       error: false
       include: true
-    
-  pdf:
-    documentclass: scrreprt
-    execute:
-      echo: false
-      warning: false
-      error: false
-      include: true
-    numbered: false  # Disable numbering for headings in PDF output
 
 editor: visual
