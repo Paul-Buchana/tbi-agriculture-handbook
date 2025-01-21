@@ -1,0 +1,27 @@
+img[alt="Logo"] {
+  display: block;
+  margin: 0 auto 20px auto;  /* Centers the logo and adds space below */
+}
+
+/* Adjust base font size */
+body {
+  font-size: 16px; /* Base font size for the entire book */
+}
+
+/* Adjust heading sizes */
+h1 {
+  font-size: 28px; /* Heading 1 size */
+}
+
+h2 {
+  font-size: 24px; /* Heading 2 size */
+}
+
+h3 {
+  font-size: 20px; /* Heading 3 size */
+}
+
+/* Adjust paragraph text */
+p {
+  font-size: 14px; /* Paragraph text size */
+}
